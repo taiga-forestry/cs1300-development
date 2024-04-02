@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%; /* for accessibility -- this is 10px by default */
+
+  /* color variables */
+  --modal-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.15);
+  --modal-shadow-small: 0 1px 2px 0 rgba(34,36,38,.15);
+  --gray-inactive: rgba(204, 214, 222);
+  --orange-active: rgba(246, 186, 187);
+  --light-blue: rgba(230, 244, 255);
+  --warning-yellow-100: rgba(237,221, 0);
+  --warning-yellow-25: rgba(237,221, 0, 0.25);
+  --edited-yellow: rgb(247, 239, 222);
+  --saved-green: rgb(236, 248, 227);
+
+  --black-100: rgba(0, 0, 0);
+  --black-75: rgba(0, 0, 0, 0.75);
+  --black-50: rgba(0, 0, 0, 0.5);
+  --black-25: rgba(0, 0, 0, 0.25);
+  --white-25: rgba(255, 255, 255, 0.25);
+  --lightest-gray: rgba(240, 240, 240);
+  --light-gray: rgba(211, 211, 211);
+  --light-gray-50: rgba(211, 211, 0.5);
+  --semi-gray: rgba(190, 190, 190);
+
+  --blue-5: rgba(0, 123, 255);
+  --blue-4: rgba(54, 152, 255);
+  --blue-3: rgba(108, 182, 255);
+  --blue-2: rgba(162, 211, 255);
+  --blue-1: rgba(216, 240, 255);
+  --yes-green: rgba(23, 161, 136);
+  --no-red: rgba(201, 92, 92);
+
+  --button-brown: rgba(136, 99, 95);
+  --button-brown-75: rgba(136, 99, 95, 0.75);
+  --button-blue: rgba(33, 133, 208);
+  --button-blue-75: rgba(33, 133, 208, 0.75);
+  --button-green: rgba(23, 161, 136);
+  --button-green-75: rgba(23, 161, 136, 0.75);
+  --button-red: rgba(201, 92, 92);
+  --button-red-75: rgba(201, 92, 92, 0.75);
+
+  --table-green: rgba(149, 222, 141);
+  --table-yellow: rgba(246, 234, 140);
+  --table-red: rgba(236, 100, 100);
+}
+
+/* colors */ 
+.text-dark-blue {  
+  color: var(--blue-5);
+}
+.text-gray {
+  color: var(--black-50);
+}
+.bg-light-blue {
+  background-color: var(--light-blue);
+}
+.bg-lightish-gray {
+  background-color: var(--semi-gray);
+}
+.bg-light-gray {
+  background-color: var(--light-gray);
+}
+.bg-lightest-gray {
+  background-color: var(--lightest-gray);
+}
+.bg-warning-yellow-25 {
+  background-color: var(--warning-yellow-25);
+}
+.bg-edited-yellow {
+  background-color: var(--edited-yellow);
+}
+.bg-saved-green {
+  background-color: var(--saved-green);
+}
+
+/* FIXME -- make these variables */
+.bg-table-green {
+  background-color: var(--table-green);
+}
+.bg-table-yellow {
+  background-color: var(--table-yellow);
+}
+.bg-table-red {
+  background-color: var(--table-red);
+}
+
+/* background images */
+
+/* borders + effects */
+/* FIXME - don't use these borders anymore lol */
+/* .border-black {
+  border: 1px solid var(--black-100);
+} */
+.border-light-gray {
+  border: 1px solid var(--light-gray);
+}
+.border-warning-yellow {
+  border: 1px solid var(--warning-yellow-100);
+}
+.shadow {
+  box-shadow: var(--modal-shadow);
+}
+.shadow-small {
+  box-shadow: var(--modal-shadow-small);
+}
+
+/* FIXME -- find more elegant solution to this lol */
+.bg-button-brown {
+  background-color: var(--button-brown);
+  transition: background-color 0.1s linear;
+}
+.bg-button-brown:hover {
+  background-color: var(--button-brown-75);
+}
+.bg-button-blue {
+  background-color: var(--button-blue);
+  transition: background-color 0.1s linear;
+}
+.bg-button-blue:hover {
+  background-color: var(--button-blue-75);
+}
+.bg-button-green {
+  background-color: var(--button-green);
+  transition: background-color 0.1s linear;
+}
+.bg-button-green:hover {
+  background-color: var(--button-green-75);
+}
+.bg-button-red {
+  background-color: var(--button-red);
+  transition: background-color 0.1s linear;
+}
+.bg-button-red:hover {
+  background-color: var(--button-red-75);
+}
+
+/* alignment containers and positioning */
+@layer utilities {
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  .l-column {
+    display: flex;
+    flex-direction: column;
+  }
+  .c-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .r-column {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+  }
+  .grid {
+    display: grid;
+  }
+}
+
+/* text and links */
+p {
+  line-height: 1.45;
+}
+h1, h2 {
+  line-height: 1.25;
+}
+
+/* input + textarea default behavior */
+input::placeholder, textarea::placeholder {
+  color: var(--black-25);
+  transition: color 0.1s linear;
+}
+input:focus, textarea:focus {
+  outline: 1px solid var(--light-gray);
+}
+input:focus::placeholder, textarea:focus::placeholder {
+  color: var(--black-50);
+} 
+textarea {
+  resize: none;
+}
+
+/* misc. useful classes */
+.dropdown-container {
+  border: 1px solid var(--light-gray);
+}
+.dropdown-container li {
+  border-bottom: 1px solid var(--light-gray);
+}
+.dropdown-container li:last-child {
+  /* only want borders in between items */
+  border-bottom: 0px;
+}
+/* FIXME - rename? */
+.dropdown-item {
+  transition: background-color 0.1s linear;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.dropdown-item:hover {
+  background-color: var(--lightest-gray);
+}
+.divider {
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+/* displays and transitions */
+.hover-lighten {
+  transition: opacity 0.1s linear;
+}
+.hover-lighten:hover {
+  opacity: 0.5;
+}
+.hover-darken {
+  opacity: 0.75;
+  transition: opacity 0.1s linear;
+}
+.hover-darken:hover {
+  opacity: 1;
+}
+
+.pulse-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--white-25);
+  animation: pulse 3s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    width: 0%;
+    opacity: 1;
+  }
+  50%, 75% {
+    width: 95%;
+    opacity: 0.1;
+  }
+  100%, 75% {
+    width: 100%;
+    opacity: 0;
+  }
+}
