@@ -90,22 +90,17 @@ function Team({ team, setTeam }: { team: Team, setTeam: Dispatch<SetStateAction<
         <div className="self-center relative">
           <button
             className="text-14 p-[4px] hover:opacity-50 align-bottom"
-            onClick={() => {
-              if (allTeams.length === 0) {
-                alert("No teams saved!");
-              } else {
-                setIsOpen(!isOpen);
-              }
-            }}
+            onClick={() => setIsOpen(!isOpen)}
           >
             Load Saved Team ▼
           </button>
 
           { isOpen &&
             <div className="absolute bg-white p-12 mt-[4px] border border-black w-full">
-              { allTeams.map((t) => (
+              { allTeams.length === 0 && <p className="text-12"> No teams saved. </p> }
+              { allTeams.length > 0 && allTeams.map((t) => (
                 <div key={t.name}>
-                  <button className="text-12" onClick={() => { setTeam(t); setTeamName(t.name) } }>
+                  <button className="text-12" onClick={() => { setTeam(t); setTeamName(t.name); setIsOpen(false); } }>
                     { t.name }
                   </button>
                 </div>
@@ -141,6 +136,17 @@ function Team({ team, setTeam }: { team: Team, setTeam: Dispatch<SetStateAction<
         }}
       >
         Save Team
+      </button>
+
+      <button
+        className="text-16 p-8 rounded-xl bg-table-red"
+        onClick={() => {
+          const newName = `Team ${allTeams.length + 1}`;
+          setTeam({ name: newName, lineup: [] });
+          setTeamName(newName);
+        }}
+      >
+        Create New Team
       </button>
 
       <div className="border border-black h-1" />
