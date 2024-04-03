@@ -3,11 +3,15 @@ import compAnalysis from "./comp-analysis.png";
 import one from "./one.png";
 import two from "./two.png";
 
+function Link({ text, href }: { text: string, href: string }) {
+  return <a className="text-dark-blue cursor:pointer hover:opacity-70 underline" target="_blank" href={href}>{text}</a>
+}
+
 export default function Handin() {
   return (
     <div className="c-column">
       <main className="l-column p-36 gap-36 max-w-[80vw]">
-        <h1 className="text-32 font-bold"> Creating a Pokémon Team Builder in React </h1>
+        <h1 className="text-32 font-bold"> Creating a <Link href="/" text="Pokémon Team Builder" /> in React </h1>
 
         <section className="l-column gap-14">
           <h2 className="text-20 font-bold"> Context </h2>
@@ -26,8 +30,8 @@ export default function Handin() {
         <section className="l-column gap-14">
           <h2 className="text-20 font-bold"> Part I: Competitive Analysis </h2>
           <p className="text-14">
-            As I was brainstorming different features for the team builder, I looked at 3 other websites which supported some favoriting feature —
-            YouTube, Amazon, and Courses @ Brown — to compare and contrast how each product handled the implementation of that feature and what functionality is offered to the user to interact with.
+            As I was brainstorming different features for the team builder, I looked at 3 other websites which supported some favoriting feature — <Link text="YouTube" href="https://www.youtube.com" />, <Link text="Amazon" href="https://www.amazon.com" />, and <Link text="Courses @ Brown" href="https://cab.brown.edu/"/> — to
+            compare and contrast how each product handled the implementation of that feature and what functionality is offered to the user to interact with.
           </p>
 
           <p className="text-14"> I created a chart to capture these similarities and differences as follows: </p>
@@ -39,6 +43,9 @@ export default function Handin() {
               <li> All of these sites offer basic favoriting features, but it was interesting to see that they also all allowed the user to create as many carts/lists as desired. </li>
               <li> However, once created, only YouTube and Amazon allowed users to sort their carts by some factors (e.g. date added), and only Amazon allowed users to filter their carts for certain factors (e.g. purchased already). </li>
               <li> On another note, both YouTube and Amazon allow for easy sharing of a cart/wishlist, but only YouTube allows for other users to edit a personal cart/playlist, which Courses@Brown and Amazon do not allow. </li>
+              <li> Overall, I actually thought that despite limited features, Courses @ Brown had an intuitive way to add to cart, with good text size and color contrast on the buttons to view/add to cart. </li>
+              <li> YouTube was also mostly successful as an interface, although the functionality to add/save to playlists can be hard to find at first since they are hidden behind dropdowns only accessible through generic/unlabeled hamburger icons. </li>
+              <li> Amazon overall was fine — the interface itself was quite cluttered, which made it difficult to locate the smaller buttons for creating/viewing wishlists. </li>
             </ul>
           </div>
 
@@ -70,7 +77,7 @@ export default function Handin() {
 
           <p className="text-14">
             To test out some of the other features, such as toggling between multiple teams or using more than one filter at once, visit
-            the <a href="/" className="text-dark-blue cursor:pointer hover:opacity-70"> team builder </a> directly!
+            the <Link text="Team Builder" href="/" /> directly!
           </p>
         </section>
       </main>
