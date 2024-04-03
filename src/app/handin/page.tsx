@@ -26,12 +26,12 @@ export default function Handin() {
         <section className="l-column gap-14">
           <h2 className="text-20 font-bold"> Part I: Competitive Analysis </h2>
           <p className="text-14">
-            As I was brainstorming different features for the team builder, I looked at 3 other websites which supported some "favoriting" feature —
+            As I was brainstorming different features for the team builder, I looked at 3 other websites which supported some favoriting feature —
             YouTube, Amazon, and Courses @ Brown — to compare and contrast how each product handled the implementation of that feature and what functionality is offered to the user to interact with.
           </p>
 
           <p className="text-14"> I created a chart to capture these similarities and differences as follows: </p>
-          <Image src={compAnalysis} className="p-24 rounded border border-black" width={800}/>
+          <Image src={compAnalysis} className="p-24 rounded border border-black" width={800} alt="Competitive Analysis of Youtube, Amazon, Courses @ Brown"/>
 
           <div className="text-14">
             <p> In summary: </p>
@@ -53,7 +53,7 @@ export default function Handin() {
           <h2 className="text-20 font-bold"> Part II: Development </h2>
 
           <p className="text-14"> The finalized Pokémon Team Builder is shown below: </p>
-          <Image src={one} className="p-24 rounded border border-black" width={1200}/>
+          <Image src={one} className="p-24 rounded border border-black" width={1200} alt="Image of team builder"/>
 
           <p className="text-14">
             You can see that there is various filtering, sorting, and searching available to classify various Pokémon.
@@ -66,7 +66,7 @@ export default function Handin() {
             highest value for each stat category (e.g. HP or attack) for your team!
           </p>
 
-          <Image src={two} className="p-24 rounded border border-black" width={300} />
+          <Image src={two} className="p-24 rounded border border-black" width={300} alt="Image of team overview" />
 
           <p className="text-14">
             To test out some of the other features, such as toggling between multiple teams or using more than one filter at once, visit
